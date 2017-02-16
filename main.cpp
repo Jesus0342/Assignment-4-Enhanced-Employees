@@ -39,7 +39,7 @@ int main()
 
 	SoftwareTester tester4;
 
-	cout << "Here is a SoftwareTester object calling the default constructor:\n";
+	cout << "SoftwareTester object calling the default constructor:\n";
 	tester4.PrintSoftwareTester();
 
 	tester4.SetAddress("1234 Maple Street");
@@ -47,14 +47,16 @@ int main()
 	tester4.SetState("CA");
 	tester4.SetZip(54321);
 
-	cout << "Here is the object after changing the derived data members:\n";
+	cout << "Object after changing the derived data members:\n";
 	tester4.PrintSoftwareTester();
 
 	tester4.SetAge(19);
 	tester4.SetCity("Laguna Hills");
 
-	cout << "Here is the object after changing the age and city:\n";
+	cout << "Object after changing the age and city:\n";
 	tester4.PrintSoftwareTester();
+
+	cout << "Object instantiated using the initialization construct:\n";
 
 	SoftwareTester joeCalculus = tester1;
 

@@ -133,22 +133,20 @@ void Employee::CopyEmployeeByRef(Employee &employee)
 void Employee::PrintEmployee()const
 {
 	// Outputs the headings for each of the columns.
-	cout << left
-		 <<	setw(NAME)   << "Name"   << setw(ID)    << "ID #"
-		 << setw(PHONE)  << "Phone"  << setw(AGE)   << "Age"
-		 << setw(GENDER) << "Gender" << setw(TITLE) << "Job Title" << " "
-		 << setw(SALARY) << "Salary" << setw(DATE)  << "Hire Date"  << endl;
+	cout << left <<	setw(NAME) << "Name" << setw(ID) << "ID #" << setw(PHONE)
+		 << "Phone" << setw(AGE) << "Age" << setw(GENDER) << "Gender"
+		 << setw(TITLE) << "Job Title" << " " << setw(SALARY) << "Salary"
+		 << setw(DATE)  << "Hire Date"  << endl;
 
 	// Outputs the line denoting the size of each of the columns.
-	cout << setw(NAME)   << "----" << setw(ID)    << "-----"
-		 << setw(PHONE)  << "-----"        << setw(AGE)   << "---"
-		 << setw(GENDER) << "------"              << setw(TITLE) << "---------"
-		 << "-" << setw(SALARY) << "-------" << setw(DATE) << "---------" << endl;
+	cout << setw(NAME) << "----" << setw(ID) << "-----" << setw(PHONE) << "-----"        << setw(AGE)   << "---"
+		 << setw(GENDER) << "------" << setw(TITLE) << "---------" << "-"
+		 << setw(SALARY) << "-------" << setw(DATE) << "---------" << endl;
 
 	// Outputs the values stored in the data members.
-	cout << setw(NAME) << name << setw(ID)     << id     << setw(PHONE) << phone
-		 << setw(AGE)  << age  << setw(GENDER) << gender << setw(TITLE) << jobTitle
-		 << "$" << setw(SALARY) << salary << setw(DATE);
+	cout << setw(NAME) << name << setw(ID) << id     << setw(PHONE) << phone
+		 << setw(AGE) << age  << setw(GENDER) << gender << setw(TITLE)
+		 << jobTitle << "$" << setw(SALARY) << salary << setw(DATE);
 
 	// Calls the PrintDate function to print the hire date.
 	hireDate.PrintDate();
