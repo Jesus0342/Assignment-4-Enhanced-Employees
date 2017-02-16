@@ -189,7 +189,19 @@ void Employee::SetDate(int startMonth, int startDay, int startYear)
 	hireDate.SetYear(startYear);
 }
 
-void Employee::CopyEmployee(Employee employee)
+void Employee::CopyEmployeeByCopy(Employee employee)
+{
+	name     = employee.name;
+	id       = employee.id;
+	phone    = employee.phone;
+	age      = employee.age;
+	gender   = employee.gender;
+	jobTitle = employee.jobTitle;
+	salary   = employee.salary;
+	hireDate = employee.hireDate;
+}
+
+void Employee::CopyEmployeeByRef(Employee &employee)
 {
 	name     = employee.name;
 	id       = employee.id;

@@ -28,7 +28,8 @@ class Employee
 		void SetTitle(string empTitle);
 		void SetSalary(string empSalary);
 		void SetDate(int startMonth, int startDay, int startYear);
-		void CopyEmployee(Employee employee);
+		void CopyEmployeeByCopy(Employee employee);
+		void CopyEmployeeByRef(Employee &employee);
 		void PrintEmployee()const;
 
 	private:

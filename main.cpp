@@ -47,8 +47,10 @@ int main()
 
 	SoftwareTester maryAlgebra;
 
-	maryAlgebra.CopyTester(tester2);
+	maryAlgebra.CopyTesterByRef(tester2);
+	maryAlgebra.PrintSoftwareTester();
 
+	maryAlgebra.CopyTesterByCopy(tester3);
 	maryAlgebra.PrintSoftwareTester();
 
 	return 0;

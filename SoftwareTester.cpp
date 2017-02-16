@@ -12,12 +12,12 @@ SoftwareTester::SoftwareTester()
 {
 }
 
-SoftwareTester::SoftwareTester
-				(string name, int id, string phone, int age, char gender,
-				 string title, string salary, int month, int day, int year,
-				 char *address, char *city, char *state, int zip)
-			   : Employee(name, id, phone, age, gender, title, salary, month, day,
-				 year)
+SoftwareTester::SoftwareTester(string name, int id, string phone, int age,
+							   char gender, string title, string salary, int month,
+							   int day, int year, char *address, char *city,
+							   char *state, int zip)
+			  : Employee(name, id, phone, age, gender, title, salary, month, day,
+					  	 year)
 {
 	this->address = new char[strlen(address) + 1];
 	strcpy(this->address, address);
@@ -57,14 +57,38 @@ SoftwareTester::~SoftwareTester()
 	cout << "Destructor called." << endl;
 }
 
-void SoftwareTester::CopyTester(SoftwareTester softwareTester)
+void SoftwareTester::CopyTesterByCopy(SoftwareTester softwareTester)
 {
-	CopyEmployee(softwareTester);
+	CopyEmployeeByCopy(softwareTester);
 
 	delete [] address;
 
 	address = new char[strlen(softwareTester.address) + 1];
-		strcpy(address, softwareTester.address);
+	strcpy(address, softwareTester.address);
+
+	delete [] city;
+
+	city = new char[strlen(softwareTester.city) + 1];
+	strcpy(city, softwareTester.city);
+
+	delete [] state;
+
+	state = new char[strlen(softwareTester.state) + 1];
+	strcpy(state, softwareTester.state);
+
+	zip = softwareTester.zip;
+
+	cout << "Copy function called." << endl;
+}
+
+void SoftwareTester::CopyTesterByRef(SoftwareTester &softwareTester)
+{
+	CopyEmployeeByRef(softwareTester);
+
+	delete [] address;
+
+	address = new char[strlen(softwareTester.address) + 1];
+	strcpy(address, softwareTester.address);
 
 	delete [] city;
 

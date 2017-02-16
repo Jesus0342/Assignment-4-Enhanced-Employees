@@ -26,7 +26,8 @@ public:
 				   char *address, char *city, char *state, int zip);
 	SoftwareTester(const SoftwareTester &softwareTester);
 	~SoftwareTester();
-	void CopyTester(SoftwareTester softwareTester);
+	void CopyTesterByCopy(SoftwareTester softwareTester);
+	void CopyTesterByRef(SoftwareTester &softwareTester);
 	void PrintSoftwareTester();
 };
 
