@@ -21,10 +21,6 @@
  *
  *****************************************************************************/
 
-/******************************************************************************
- * PrintHeader
- *    This function prints the project header.
- *****************************************************************************/
 void PrintHeader(string labName, char labType, int labNum);
 
 int main()
@@ -41,23 +37,46 @@ int main()
 						   "12,000", 12, 25, 2016, "9876 Elm Street",
 						   "San Clemente", "CA", 92672);
 
+	SoftwareTester tester4;
+
+	cout << "Here is a SoftwareTester object calling the default constructor:\n";
+	tester4.PrintSoftwareTester();
+
+	tester4.SetAddress("1234 Maple Street");
+	tester4.SetCity("Los Angeles");
+	tester4.SetState("CA");
+	tester4.SetZip(54321);
+
+	cout << "Here is the object after changing the derived data members:\n";
+	tester4.PrintSoftwareTester();
+
+	tester4.SetAge(19);
+	tester4.SetCity("Laguna Hills");
+
+	cout << "Here is the object after changing the age and city:\n";
+	tester4.PrintSoftwareTester();
+
 	SoftwareTester joeCalculus = tester1;
 
 	joeCalculus.PrintSoftwareTester();
 
 	SoftwareTester maryAlgebra;
 
-	maryAlgebra.CopyTesterByRef(tester2);
+	maryAlgebra.CopyTesterByCopy(tester2);
 	maryAlgebra.PrintSoftwareTester();
 
-	maryAlgebra.CopyTesterByCopy(tester3);
-	maryAlgebra.PrintSoftwareTester();
+	SoftwareTester joTrig;
+
+	joTrig.CopyTesterByRef(tester3);
+	joTrig.PrintSoftwareTester();
 
 	return 0;
 }
 
 /******************************************************************************
  * PrintHeader
+ * ----------------------------------------------------------------------------
+ * This function prints the project header.
  * ----------------------------------------------------------------------------
  * PRE-CONDITIONS:
  *     labName - Lab Name has to be preciously defined

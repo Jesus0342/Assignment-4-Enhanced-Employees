@@ -49,139 +49,41 @@ Employee::~Employee()
 {
 }
 
-/******************************************************************************
- * SetName
- * ----------------------------------------------------------------------------
- * Mutator function. Changes the value stored in name to the value passed in
- * from main.
- * ----------------------------------------------------------------------------
- * PRE-CONDITIONS:
- * 	   empName - Employee's new Name must be previously defined.
- *
- * POST-CONDITIONS:
- *     This function will store a new value in name.
- *****************************************************************************/
 void Employee::SetName(string empName)
 {
 	name = empName;
 }
 
-/******************************************************************************
- * SetID
- * ----------------------------------------------------------------------------
- * Mutator function. Changes the value stored in id to the value passed in
- * from main.
- * ----------------------------------------------------------------------------
- * PRE-CONDITIONS:
- * 	   empID - Employee's new ID must be previously defined.
- *
- * POST-CONDITIONS:
- *     This function will store a new value in id.
- *****************************************************************************/
 void Employee::SetID(int empID)
 {
 	id = empID;
 }
 
-/******************************************************************************
- * SetPhone
- * ----------------------------------------------------------------------------
- * Mutator function. Changes the value stored in phone to the value passed in
- * from main.
- * ----------------------------------------------------------------------------
- * PRE-CONDITIONS:
- * 	   empPhone - Employee's new Phone Number must be previously defined.
- *
- * POST-CONDITIONS:
- *     This function will store a new value in phone.
- *****************************************************************************/
 void Employee::SetPhone(string empPhone)
 {
 	phone = empPhone;
 }
 
-/******************************************************************************
- * SetAge
- * ----------------------------------------------------------------------------
- * Mutator function. Changes the value stored in age to the value passed in
- * from main.
- * ----------------------------------------------------------------------------
- * PRE-CONDITIONS:
- * 	   empAge - Employee's new Age must be previously defined.
- *
- * POST-CONDITIONS:
- *     This function will store a new value in age.
- *****************************************************************************/
 void Employee::SetAge(int empAge)
 {
 	age = empAge;
 }
 
-/******************************************************************************
- * SetGender
- * ----------------------------------------------------------------------------
- * Mutator function. Changes the value stored in gender to the value passed in
- * from main.
- * ----------------------------------------------------------------------------
- * PRE-CONDITIONS:
- * 	   empGender - Employee's new Gender must be previously defined.
- *
- * POST-CONDITIONS:
- *     This function will store a new value in gender.
- *****************************************************************************/
 void Employee::SetGender(char empGender)
 {
 	gender = empGender;
 }
 
-/******************************************************************************
- * SetTitle
- * ----------------------------------------------------------------------------
- * Mutator function. Changes the value stored in jobTitle to the value passed
- * in from main.
- * ----------------------------------------------------------------------------
- * PRE-CONDITIONS:
- * 	   empTitle - Employee's new Job Title must be previously defined.
- *
- * POST-CONDITIONS:
- *     This function will store a new value in jobTitle.
- *****************************************************************************/
 void Employee::SetTitle(string empTitle)
 {
 	jobTitle = empTitle;
 }
 
-/******************************************************************************
- * SetSalary
- * ----------------------------------------------------------------------------
- * Mutator function. Changes the value stored in salary to the value passed in
- * from main.
- * ----------------------------------------------------------------------------
- * PRE-CONDITIONS:
- * 	   empSalary - Employee's new Salary must be previously defined.
- *
- * POST-CONDITIONS:
- *     This function will store a new value in salary.
- *****************************************************************************/
 void Employee::SetSalary(string empSalary)
 {
 	salary = empSalary;
 }
 
-/******************************************************************************
- * SetDate
- * ----------------------------------------------------------------------------
- * Mutator function. Changes the values stored in hire date by having the Date
- * class object call each of the date class mutator functions.
- * ----------------------------------------------------------------------------
- * PRE-CONDITIONS:
- * 	   startMonth - Month of date must be previously defined.
- * 	   startDay   - Day of date must be previously defined.
- * 	   startYear  - Year of date must be previously defined.
- *
- * POST-CONDITIONS:
- *     This function will change the date stored in hireDate.
- *****************************************************************************/
 void Employee::SetDate(int startMonth, int startDay, int startYear)
 {
 	hireDate.SetMonth(startMonth);
@@ -189,6 +91,9 @@ void Employee::SetDate(int startMonth, int startDay, int startYear)
 	hireDate.SetYear(startYear);
 }
 
+/******************************************************************************
+ *
+ *****************************************************************************/
 void Employee::CopyEmployeeByCopy(Employee employee)
 {
 	name     = employee.name;

@@ -20,12 +20,19 @@ private:
 
 public:
 	SoftwareTester();
-	SoftwareTester(string empName, int empID,       string empPhone, int empAge,
-			   	   char empGender, string empTitle, string empSalary,
-				   int startMonth, int startDay,    int startYear,
+	SoftwareTester(string name, int id, string phone, int age, char gender,
+				   string jobTitle, string salary, int month, int day, int year,
 				   char *address, char *city, char *state, int zip);
 	SoftwareTester(const SoftwareTester &softwareTester);
 	~SoftwareTester();
+	void SetAddress(char *newAddress);
+	void SetCity(char *newCity);
+	void SetState(char *newState);
+	void SetZip(int newZip);
+	char* GetAddress();
+	char* GetCity();
+	char* GetState();
+	int GetZip();
 	void CopyTesterByCopy(SoftwareTester softwareTester);
 	void CopyTesterByRef(SoftwareTester &softwareTester);
 	void PrintSoftwareTester();

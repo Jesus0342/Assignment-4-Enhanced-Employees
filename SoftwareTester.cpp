@@ -8,15 +8,16 @@
 #include "SoftwareTester.h"
 
 SoftwareTester::SoftwareTester()
-			  : Employee(), address(NULL), city(NULL), state(NULL), zip(0)
+			  : Employee(), address(""), city(""), state(""), zip(0)
 {
+//	cout << "Default constructor called." << endl;
 }
 
 SoftwareTester::SoftwareTester(string name, int id, string phone, int age,
-							   char gender, string title, string salary, int month,
-							   int day, int year, char *address, char *city,
-							   char *state, int zip)
-			  : Employee(name, id, phone, age, gender, title, salary, month, day,
+							   char gender, string jobTitle, string salary,
+							   int month, int day, int year, char *address,
+							   char *city, char *state, int zip)
+			  : Employee(name, id, phone, age, gender, jobTitle, salary, month, day,
 					  	 year)
 {
 	this->address = new char[strlen(address) + 1];
@@ -29,6 +30,8 @@ SoftwareTester::SoftwareTester(string name, int id, string phone, int age,
 	strcpy(this->state, state);
 
 	this->zip = zip;
+
+//	cout << "Constructor called." << endl;
 }
 
 SoftwareTester::SoftwareTester(const SoftwareTester &softwareTester)
@@ -45,7 +48,7 @@ SoftwareTester::SoftwareTester(const SoftwareTester &softwareTester)
 
 	zip = softwareTester.zip;
 
-	cout << "Copy constructor called." << endl;
+//	cout << "Copy constructor called." << endl;
 }
 
 SoftwareTester::~SoftwareTester()
@@ -54,7 +57,50 @@ SoftwareTester::~SoftwareTester()
 	delete [] city;
 	delete [] state;
 
-	cout << "Destructor called." << endl;
+//	cout << "Destructor called." << endl;
+}
+
+void SoftwareTester::SetAddress(char *newAddress)
+{
+	address = new char[strlen(newAddress) + 1];
+	strcpy(address, newAddress);
+}
+
+void SoftwareTester::SetCity(char *newCity)
+{
+	city = new char[strlen(newCity) + 1];
+	strcpy(city, newCity);
+}
+
+void SoftwareTester::SetState(char *newState)
+{
+	state = new char[strlen(newState) + 1];
+	strcpy(state, newState);
+}
+
+void SoftwareTester::SetZip(int newZip)
+{
+	zip = newZip;
+}
+
+char* SoftwareTester::GetAddress()
+{
+	return address;
+}
+
+char* SoftwareTester::GetCity()
+{
+	return city;
+}
+
+char* SoftwareTester::GetState()
+{
+	return state;
+}
+
+int SoftwareTester::GetZip()
+{
+	return zip;
 }
 
 void SoftwareTester::CopyTesterByCopy(SoftwareTester softwareTester)
@@ -78,7 +124,7 @@ void SoftwareTester::CopyTesterByCopy(SoftwareTester softwareTester)
 
 	zip = softwareTester.zip;
 
-	cout << "Copy function called." << endl;
+	cout << "The function that returns an object by copy was called." << endl;
 }
 
 void SoftwareTester::CopyTesterByRef(SoftwareTester &softwareTester)
@@ -102,7 +148,7 @@ void SoftwareTester::CopyTesterByRef(SoftwareTester &softwareTester)
 
 	zip = softwareTester.zip;
 
-	cout << "Copy function called." << endl;
+	cout << "The function that returns an object by reference was called." << endl;
 }
 
 void SoftwareTester::PrintSoftwareTester()
@@ -110,8 +156,8 @@ void SoftwareTester::PrintSoftwareTester()
 	PrintEmployee();
 
 	cout << left
-		 <<	setw(NAME)  << " "     << setw(ADDRESS) << "Address"  << setw(CITY) << "City"
-		 << setw(STATE) << "State" << setw(ZIP)     << "Zip Code" << endl;
+		 <<	setw(NAME)  << " " << setw(ADDRESS) << "Address" << setw(CITY)
+		 << "City" << setw(STATE) << "State" << setw(ZIP) << "Zip Code" << endl;
 
 	// Outputs the line denoting the size of each of the columns.
 	cout << setw(NAME) << " " << setw(ADDRESS) << "-------" << setw(CITY) << "----"
