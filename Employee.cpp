@@ -1,11 +1,9 @@
 /******************************************************************************
-* AUTHOR        : Jesus Sanchez
-* STUDENT ID    : 1024834
-* ASSIGNMENT #2 : Employee - Inheritance
-* CLASS         : CS1C
-* SECTION       : MW: 1:30pm
-* DUE DATE      : 02/06/2017
-* ****************************************************************************/
+* PROGRAMMED BY  : Jesus Sanchez
+* STUDENT ID     : 1024834
+* CLASS          : MW: 1:30pm - 2:50pm
+* ASSIGNMENT #4  : Enhanced Employees
+******************************************************************************/
 
 #include "Employee.h"
 
@@ -32,6 +30,13 @@ Employee::Employee(string empName, int empID,       string empPhone, int empAge,
 		: name(empName), id(empID), phone(empPhone), age(empAge), gender(empGender),
 		  jobTitle(empTitle), salary(empSalary),
 		  hireDate(startMonth, startDay, startYear)
+{
+}
+
+Employee::Employee(const Employee &employee)
+		 : name(employee.name), id(employee.id), phone(employee.phone),
+		   age(employee.age), gender(employee.gender), jobTitle(employee.jobTitle),
+		   salary(employee.salary), hireDate(employee.hireDate)
 {
 }
 
@@ -184,6 +189,18 @@ void Employee::SetDate(int startMonth, int startDay, int startYear)
 	hireDate.SetYear(startYear);
 }
 
+void Employee::CopyEmployee(Employee employee)
+{
+	name     = employee.name;
+	id       = employee.id;
+	phone    = employee.phone;
+	age      = employee.age;
+	gender   = employee.gender;
+	jobTitle = employee.jobTitle;
+	salary   = employee.salary;
+	hireDate = employee.hireDate;
+}
+
 /******************************************************************************
  * PrintEmployee
  * ----------------------------------------------------------------------------
@@ -206,10 +223,10 @@ void Employee::PrintEmployee()const
 		 << setw(SALARY) << "Salary" << setw(DATE)  << "Hire Date"  << endl;
 
 	// Outputs the line denoting the size of each of the columns.
-	cout << setw(NAME)   << "-------------------" << setw(ID)    << "-----"
-		 << setw(PHONE)  << "------------"        << setw(AGE)   << "---"
-		 << setw(GENDER) << "------"              << setw(TITLE) << "--------------"
-		 << "-" << setw(SALARY) << "-------" << setw(DATE) << "----------" << endl;
+	cout << setw(NAME)   << "----" << setw(ID)    << "-----"
+		 << setw(PHONE)  << "-----"        << setw(AGE)   << "---"
+		 << setw(GENDER) << "------"              << setw(TITLE) << "---------"
+		 << "-" << setw(SALARY) << "-------" << setw(DATE) << "---------" << endl;
 
 	// Outputs the values stored in the data members.
 	cout << setw(NAME) << name << setw(ID)     << id     << setw(PHONE) << phone

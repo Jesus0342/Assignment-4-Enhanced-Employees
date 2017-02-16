@@ -7,7 +7,7 @@
 * DUE DATE      : 02/22/2017
 * ****************************************************************************/
 
-#include "Employee.h"
+#include "SoftwareTester.h"
 
 /******************************************************************************
  * ENHANCED EMPLOYEES
@@ -29,31 +29,27 @@ void PrintHeader(string labName, char labType, int labNum);
 
 int main()
 {
-	Employee employee;
-	Employee barrackObama("Barack Obama", 12346, "310-555-5555", 51,
-						  'M', "Comedian", "70,123", 5, 8, 2015);
-
 	PrintHeader("Enhanced Employees", 'A', 4);
 
-	cout << "Employee object calling the default constructor:\n";
-	employee.PrintEmployee();
+	SoftwareTester tester1("Joe Calculus", 64879, "945-555-1234", 22, 'M',
+			   	   	   	   "Junior Tester", "40,000", 7, 31, 2016,
+						   "1234 Main Avenue", "Laguna Niguel", "CA", 92677);
+	SoftwareTester tester2("Mary Algebra", 76309, "312-555-5555", 19, 'F',
+						   "Senior Tester", "70,000", 5, 8, 2015,
+						   "3333 Marguerite Pkwy", "Mission Viejo", "CA", 92646);
+	SoftwareTester tester3("Jo Trig", 10192, "712-703-1234", 34, 'F', "Intern",
+						   "12,000", 12, 25, 2016, "9876 Elm Street",
+						   "San Clemente", "CA", 92672);
 
-	cout << "Employee object calling the non-default constructor:\n";
-	barrackObama.PrintEmployee();
+	SoftwareTester joeCalculus = tester1;
 
-	// Calls the mutator functions of the Employee class to set all data
-	// members of the first Employee object to new values.
-	employee.SetName("Hillary Clinton");
-	employee.SetID(77777);
-	employee.SetPhone("203-555-6789");
-	employee.SetAge(58);
-	employee.SetGender('F');
-	employee.SetTitle("News Reporter");
-	employee.SetSalary("500,500");
-	employee.SetDate(3, 1, 2005);
+	joeCalculus.PrintSoftwareTester();
 
-	cout << "First Employee object after changing the data members:\n";
-	employee.PrintEmployee();
+	SoftwareTester maryAlgebra;
+
+	maryAlgebra.CopyTester(tester2);
+
+	maryAlgebra.PrintSoftwareTester();
 
 	return 0;
 }

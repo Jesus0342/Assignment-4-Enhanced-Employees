@@ -10,9 +10,7 @@
 #ifndef DATE_H_
 #define DATE_H_
 
-#include <iostream>
-#include <iomanip>
-using namespace std;
+#include "Header.h"
 
 /******************************************************************************
 * CONSTANT - USED FOR FORMATTING
