@@ -92,7 +92,17 @@ void Employee::SetDate(int startMonth, int startDay, int startYear)
 }
 
 /******************************************************************************
+ * CopyEmployeeByCopy
+ * ----------------------------------------------------------------------------
+ * This is a deep copy function that receives an Employee object by copy and
+ * assigns all of the values stored in its data members to calling object's data
+ * members.
+ * ----------------------------------------------------------------------------
+ * PRE-CONDITIONS:
+ *     employee - Employee object is defined.
  *
+ * POST-CONDITIONS:
+ *     Copies object that was passed in's data members to the calling object.
  *****************************************************************************/
 void Employee::CopyEmployeeByCopy(Employee employee)
 {
@@ -106,6 +116,19 @@ void Employee::CopyEmployeeByCopy(Employee employee)
 	hireDate = employee.hireDate;
 }
 
+/******************************************************************************
+ * CopyEmployeeByRef
+ * ----------------------------------------------------------------------------
+ * This is a deep copy function that receives an Employee object by reference
+ * and assigns all of the values stored in its data members to calling object's
+ * data members.
+ * ----------------------------------------------------------------------------
+ * PRE-CONDITIONS:
+ *     employee - Employee object is defined.
+ *
+ * POST-CONDITIONS:
+ *     Copies object that was passed in's data members to the calling object.
+ *****************************************************************************/
 void Employee::CopyEmployeeByRef(Employee &employee)
 {
 	name     = employee.name;

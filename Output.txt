@@ -1,0 +1,61 @@
+************************************************
+* PROGRAMMED BY  : Jesus Sanchez
+* STUDENT ID     : 1024834
+* CLASS          : MW: 1:30pm - 2:50pm
+* ASSIGNMENT #4  : Enhanced Employees
+************************************************
+
+SoftwareTester object calling the default constructor:
+Name                 ID #  Phone        Age Gender Job Title       Salary  Hire Date  
+----                 ----- -----        --- ------ ---------      -------- ---------  
+                     0                  0                         $        00/00/0000
+
+                     Address                   City                 State Zip Code 
+                     -------                   ----                 ----- -------- 
+                                                                          0        
+
+Object after changing the derived data members:
+Name                 ID #  Phone        Age Gender Job Title       Salary  Hire Date  
+----                 ----- -----        --- ------ ---------      -------- ---------  
+                     0                  0                         $        00/00/0000
+
+                     Address                   City                 State Zip Code 
+                     -------                   ----                 ----- -------- 
+                     1234 Maple Street         Los Angeles          CA    54321    
+
+Object after changing the age and city:
+Name                 ID #  Phone        Age Gender Job Title       Salary  Hire Date  
+----                 ----- -----        --- ------ ---------      -------- ---------  
+                     0                  19                        $        00/00/0000
+
+                     Address                   City                 State Zip Code 
+                     -------                   ----                 ----- -------- 
+                     1234 Maple Street         Laguna Hills         CA    54321    
+
+Object instantiated using the initialization construct:
+Name                 ID #  Phone        Age Gender Job Title       Salary  Hire Date  
+----                 ----- -----        --- ------ ---------      -------- ---------  
+Joe Calculus         64879 945-555-1234 22  M      Junior Tester  $40,000  07/31/2016
+
+                     Address                   City                 State Zip Code 
+                     -------                   ----                 ----- -------- 
+                     1234 Main Avenue          Laguna Niguel        CA    92677    
+
+The function that returns an object by copy was called.
+Name                 ID #  Phone        Age Gender Job Title       Salary  Hire Date  
+----                 ----- -----        --- ------ ---------      -------- ---------  
+Mary Algebra         76309 312-555-5555 19  F      Senior Tester  $70,000  05/08/2015
+
+                     Address                   City                 State Zip Code 
+                     -------                   ----                 ----- -------- 
+                     3333 Marguerite Pkwy      Mission Viejo        CA    92646    
+
+The function that returns an object by reference was called.
+Name                 ID #  Phone        Age Gender Job Title       Salary  Hire Date  
+----                 ----- -----        --- ------ ---------      -------- ---------  
+Jo Trig              10192 712-703-1234 34  F      Intern         $12,000  12/25/2016
+
+                     Address                   City                 State Zip Code 
+                     -------                   ----                 ----- -------- 
+                     9876 Elm Street           San Clemente         CA    92672    
+

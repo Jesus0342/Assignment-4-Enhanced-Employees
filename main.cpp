@@ -12,12 +12,24 @@
 /******************************************************************************
  * ENHANCED EMPLOYEES
  * ----------------------------------------------------------------------------
- * This program
+ * This program uses a SoftwareTester class that is derived from an Employee
+ * class to demonstrate object instantiation using a copy constructor and a
+ * deep copy function. First, four SoftwareTester objects are declared with the
+ * first three holding the information of the three Software Testers. The fourth
+ * tester is used to show the set functions. Then, three more SoftwareTester
+ * objects are declared. The first uses the initialization construct to call
+ * the copy constructor and the next two call the deep copy functions that
+ * return by copy and by reference. After each object is instantiated, the
+ * print function is called to display the Software Tester's information.
  * ----------------------------------------------------------------------------
  * INPUT:
  *    There is no input.
  *
  * OUTPUT:
+ *    tester4     - Software Tester object used to test class functions.
+ *    joeCalculus - Software Tester object holding Joe Calculus' information.
+ *    maryAlgebra - Software Tester object holding Mary Algebra's information.
+ *    joTrig      - Software Tester object holding Jo Trig's information.
  *
  *****************************************************************************/
 
@@ -39,36 +51,45 @@ int main()
 
 	SoftwareTester tester4;
 
+	// Prints the object with the default values.
 	cout << "SoftwareTester object calling the default constructor:\n";
 	tester4.PrintSoftwareTester();
 
+	// Sets all of the derived class data members to new values.
 	tester4.SetAddress("1234 Maple Street");
 	tester4.SetCity("Los Angeles");
 	tester4.SetState("CA");
 	tester4.SetZip(54321);
 
+	// Prints the object with the new class data member values.
 	cout << "Object after changing the derived data members:\n";
 	tester4.PrintSoftwareTester();
 
+	// Sets the age and city of the object to new values.
 	tester4.SetAge(19);
 	tester4.SetCity("Laguna Hills");
 
+	// Prints the object with the new age and city values.
 	cout << "Object after changing the age and city:\n";
 	tester4.PrintSoftwareTester();
 
+	// Instantiates an object using the initialization construct to call the
+	// copy constructor.
 	cout << "Object instantiated using the initialization construct:\n";
-
 	SoftwareTester joeCalculus = tester1;
 
+	// Prints the object with all of the copied information.
 	joeCalculus.PrintSoftwareTester();
 
+	// Instantiates an object, calls the deep copy by copy function, and prints
+	// the values stored in the object.
 	SoftwareTester maryAlgebra;
-
 	maryAlgebra.CopyTesterByCopy(tester2);
 	maryAlgebra.PrintSoftwareTester();
 
+	// Instantiates an object, calls the deep copy by reference function, and
+	// prints the values stored in the object.
 	SoftwareTester joTrig;
-
 	joTrig.CopyTesterByRef(tester3);
 	joTrig.PrintSoftwareTester();
 

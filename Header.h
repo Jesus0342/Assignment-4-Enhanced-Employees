@@ -8,6 +8,7 @@ using namespace std;
 
 namespace columns
 {
+	#define DATE    11
 	#define NAME    21
 	#define ID      6
 	#define PHONE   13

@@ -12,12 +12,6 @@
 
 class SoftwareTester : public Employee
 {
-private:
-	char *address;
-	char *city;
-	char *state;
-	int  zip;
-
 public:
 	SoftwareTester();
 	SoftwareTester(string name, int id, string phone, int age, char gender,
@@ -36,6 +30,12 @@ public:
 	void CopyTesterByCopy(SoftwareTester softwareTester);
 	void CopyTesterByRef(SoftwareTester &softwareTester);
 	void PrintSoftwareTester();
+
+private:
+	char *address;
+	char *city;
+	char *state;
+	int  zip;
 };
 
 #endif
